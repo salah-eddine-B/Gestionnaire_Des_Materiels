@@ -1,0 +1,129 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: var(--card-bg-color);
+  border-right: 1px solid var(--subtle-text-color);
+  overflow: hidden;
+  width: 250px;
+  min-width: 65px;
+  /* transition: ease 0.4s ; */
+  transition: width 360ms cubic-bezier(.2,.9,.2,1), background-color 300ms ease;
+  
+}
+
+.sidebar-container.collapsed {
+  width: 65px;
+  
+}
+
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  margin-bottom: 1rem;
+}
+.sidebar-container.collapsed .appLogo{
+  width: 3rem;
+}
+
+.sidebar-container.collapsed .sidebar-link {
+  justify-content: center;
+}
+.appLogo{
+  width: 12rem;
+  cursor: pointer;
+  transition: width 340ms cubic-bezier(.2,.9,.2,1), opacity 220ms;
+}
+
+.sidebar-label {
+  display:inline-block;
+  transition: opacity 260ms ease, transform 260ms ease;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  flex-grow: 1;
+   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.3rem;
+  border-radius: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s;
+  font-size: 16px;
+}
+
+.sidebar-link:hover {
+  background-color: var(--primary-accent);
+  color: #fff;
+}
+
+.sidebar-link.active {
+  background-color: var(--primary-accent);
+  color: #fff;
+}
+
+.sidebar-link.active .sidebar-icon
+{
+  filter: brightness(0) invert(1);
+}
+
+.sidebar-link:hover .sidebar-icon
+{
+  filter: brightness(0) invert(1);
+}
+
+
+
+
+
+
+.sidebar-footer {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-container.collapsed {
+  width: 65px;
+  
+}
+
+.appLogo {
+  width: 12rem;
+}
+
+.sidebar-container.collapsed .appLogo {
+  width: 3rem;
+}
+
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.sidebar-link:hover .sidebar-icon {
+  transform: scale(1.1);
+}
+
+

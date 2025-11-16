@@ -1,0 +1,69 @@
+.main-app {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 6vh auto;
+  /* let the sidebar element width determine column size so we can animate it */
+  /* grid-template-columns: auto auto; */
+  gap: 2px;
+  height: 100vh;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+}
+
+.main-app.minimized {
+  grid-template-columns: 65px auto;
+}
+
+.sidebar-layout {
+  grid-area: sidebar;
+  background-color: #f0f0f0;
+  transition: ease 0.4s;
+}
+
+.header-layout {
+  grid-area: header;
+  background-color: #d0d0d0;
+}
+
+.pages-layout {
+  grid-area: content;
+  background-color: #e0e0e0;
+}
+
+/* ---------------------- */
+/* ✅ Responsive Design   */
+/* ---------------------- */
+
+/* Medium screens (tablet) */
+@media (max-width: 1023px) {
+  .main-app {
+    grid-template-columns: 250px auto;
+  }
+
+  .main-app.minimized {
+    grid-template-columns: 60px auto;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .main-app {
+    grid-template-columns: 10vw auto;
+    grid-template-rows: 7vh auto;
+    /* grid-template-areas:
+      "header"
+      "sidebar"
+      "content"; */
+    height: 100vh; /* Allow vertical scrolling */
+  }
+
+  .sidebar-layout {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-app.minimized {
+    grid-template-columns: 1fr;
+  }
+}
