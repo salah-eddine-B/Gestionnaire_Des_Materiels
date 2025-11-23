@@ -2,6 +2,7 @@ import './Sidebar.css';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
+import { setActivePage } from '../../store/uiSlice';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import listIconWhite from './icons/ListIcon.svg';
 import listIconBlack from './icons/ListIconBlack.svg';
@@ -67,6 +68,7 @@ export default function Sidebar() {
       <nav className="sidebar-links">
   {menuItems.map((item) => (
     <NavLink
+      onClick={() => dispatch(setActivePage(item.text))}
       key={item.path}
       to={item.path}
       className={({ isActive }) =>
