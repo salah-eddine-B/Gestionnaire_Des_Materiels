@@ -56,6 +56,7 @@ export default function Header() {
       </div>
       {currentPageInfo.title === 'Matériels' && (
         <>
+        {/* <div> */}
         <div className='nav-menu'>
           {links.map((link,index) => (
             <a
@@ -67,6 +68,9 @@ export default function Header() {
           )
           )}
         </div>
+          {/* <input type='text' className="search-input" placeholder='Rechercher des matériels...'/>
+        </div> */}
+
         <div className='action-section'>
           <button 
             className="action-button add-btn"
